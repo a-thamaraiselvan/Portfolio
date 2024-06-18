@@ -1,0 +1,57 @@
+.certificate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 10px 70px;
+}
+
+.certificate-title {
+    position: relative;
+}
+
+.certificate-title h1 {
+    padding: 0px 10px;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.certificate-title img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 140px;
+}
+
+.certificate-container {
+    background-color: transparent;
+    width: 90%;
+    height: 350px;
+    padding: 0px 10px;
+}
+
+.certificate-container img {
+    align-items: center;
+    width: 350px;
+    height: 250px;
+    margin: 10px;
+}
+
+.certificate-details {
+    background-color: aliceblue;
+    color: black;
+    text-align: center;
+}
+
+.certificate-details {}
+
+@media (max-width:768px) {
+    .certificate-container img {
+        align-items: center;
+        width: 350px;
+        height: 250px;
+        margin: 10px;
+    }
+}

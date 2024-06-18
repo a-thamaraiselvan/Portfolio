@@ -1,0 +1,119 @@
+.Loader {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.Loader::after {
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    order: 1;
+    animation: loader-left 5ms ease-out;
+    z-index: -1;
+}
+
+.Loader::before {
+    background-color: red;
+    width: 50%;
+    height: 100vh;
+    order: 2;
+    animation: loader-right 5ms ease-out;
+    z-index: -1;
+}
+
+.Loader-Eff {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    animation: spin 2s linear infinite;
+}
+
+.img-loader {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.Loader img {
+    width: 88px;
+    height: 88px;
+    border-radius: 50%;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 2px 2px #e65c00;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 2px 2px #18b201;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 2px 2px #0456c8;
+    }
+}
+
+.Loader-Eff::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    /* box-shadow: 0 0 5px rgba(255, 255, 255, .3); */
+    opacity: 1;
+    transition: .2s;
+}
+
+.loaders {
+    display: flex;
+    flex-direction: row;
+    z-index: -2;
+}
+
+
+/* .loader-left {
+    background-color: white;
+    width: 50%;
+    height: 100vh;
+    order: 1;
+    animation: loader-left 5ms ease-out;
+    -webkit-animation: loader-left 5ms ease-out;
+} */
+
+@keyframes loader-left {
+    0% {
+        transform-origin: center;
+    }
+    100% {
+        transform-origin: left;
+    }
+}
+
+
+/* .loader-right {
+    background-color: red;
+    width: 50%;
+    height: 100vh;
+    order: 2;
+    animation: loader-right 5ms ease-out;
+    -webkit-animation: loader-right 5ms ease-out;
+} */
+
+@keyframes loader-right {
+    0% {
+        transform-origin: center;
+    }
+    100% {
+        transform-origin: right;
+    }
+}

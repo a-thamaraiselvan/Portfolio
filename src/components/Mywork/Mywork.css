@@ -1,0 +1,150 @@
+.mywork .mywork-container {
+    animation: appar linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+}
+
+@keyframes appar {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.mywork {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin: 10px 10px;
+}
+
+.mywork-title {
+    position: relative;
+}
+
+.mywork-title h1 {
+    padding: 0px 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.mywork-title img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 140px;
+}
+
+.mywork-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.mywork-details {
+    position: relative;
+    overflow: hidden;
+}
+
+.mywork-container img {
+    display: block;
+    position: relative;
+    width: 350px;
+    cursor: pointer;
+    border-radius: 13px;
+    transition: 0.5s;
+    border: 2px solid red;
+}
+
+.mywork-container img:hover {
+    transform: scale(1.2);
+    transition: 0.5s;
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    -ms-transition: 0.5s;
+    -o-transition: 0.5s;
+}
+
+.mywork-overlay {
+    height: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 15px;
+    overflow: hidden;
+    padding: 0px 10px;
+    width: 100%;
+    background: linear-gradient(transparent, #1c1c1c 98%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s ease;
+}
+
+.mywork-details:hover .mywork-overlay {
+    height: 100%;
+}
+
+.mywork-showmore {
+    display: flex;
+    gap: 10px;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 20px 30px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.mywork-showmore:hover {
+    gap: 20px;
+    transition: 0.4s;
+}
+
+@media (max-width:768px) {
+    .mywork {
+        gap: 25px;
+        margin: 25px 35px;
+        align-items: start;
+    }
+    .mywork-title h1 {
+        padding: 0;
+        font-size: 25px;
+        font-weight: 300;
+    }
+    .mywork-title img {
+        width: 130px;
+        margin-right: -10px;
+    }
+    .mywork-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .mywork-container img {
+        width: 300px;
+        height: auto;
+    }
+    .mywork-showmore {
+        padding: 10px 20px;
+        font-size: 14px;
+        margin: 25px auto;
+        cursor: pointer;
+    }
+    .mywork-overlay {
+        font-size: 10px;
+    }
+}
