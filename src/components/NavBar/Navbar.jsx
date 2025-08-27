@@ -21,7 +21,7 @@ const Navbar = () => {
             <div className='navbar'>
                 {/* <img src={logo} alt='logo' /> */}
                 <div className="logo">
-                    <h1>Portfolio</h1>
+                    <h1>Lotus</h1>
                     <img src={underline} alt="" />
                 </div>
                 <img src={menu_open} onClick={openMenu} alt="" className='nav-mob-open' />
@@ -30,7 +30,8 @@ const Navbar = () => {
                     <li><AnchorLink className='anchor-link' href='#home'> <p onClick={() => setMenu("home")}>Home</p></AnchorLink>{menu === "home" ? <img src={underline} alt='' /> : <></>} </li>
                     <li><AnchorLink className='anchor-link' offset={50} href='#about'> <p onClick={() => setMenu("about")}> About Me</p></AnchorLink>{menu === "about" ? <img src={underline} alt='' /> : <></>}</li>
                     <li><AnchorLink className='anchor-link' offset={50} href='#services'> <p onClick={() => setMenu("service")}>Services</p></AnchorLink>{menu === "service" ? <img src={underline} alt='' /> : <></>}</li>
-                    <li><AnchorLink className='anchor-link' offset={50} href='#work'> <p onClick={() => setMenu("work")}>Certification</p></AnchorLink>{menu === "work" ? <img src={underline} alt='' /> : <></>}</li>
+                    <li><AnchorLink className='anchor-link' offset={50} href='#work'> <p onClick={() => setMenu("work")}>Project</p></AnchorLink>{menu === "work" ? <img src={underline} alt='' /> : <></>}</li>
+                    <li><AnchorLink className='anchor-link' offset={50} href='#certificate'> <p onClick={() => setMenu("certificate")}>Certificate</p></AnchorLink>{menu === "certificate" ? <img src={underline} alt='' /> : <></>}</li>
                     <li><AnchorLink className='anchor-link' offset={50} href='#contact'> <p onClick={() => setMenu("contact")}> Contact</p></AnchorLink>{menu === "contact" ? <img src={underline} alt='' /> : <></>}</li>
                 </ul>
                 <div className="nav-connect">

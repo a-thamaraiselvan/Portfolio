@@ -6,7 +6,6 @@ const Loader = () => {
     return (
         <>
             <div className='Loader'>
-                <div className='Loader-Eff'></div>
                 <div className='img-loader'>
                     <img src={dsce} alt='loder'></img>
                 </div>
@@ -15,6 +14,7 @@ const Loader = () => {
                     <div className="loader-left"></div>
                 </div>
             </div>
+            
         </>
     )
 }

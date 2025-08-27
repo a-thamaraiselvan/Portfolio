@@ -1,3 +1,9 @@
+:root {
+    --linen: #ECE7E2;
+    --spruce: #4A7766;
+    --color: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 100.0%);
+}
+
 .navbar {
     display: flex;
     align-items: center;
@@ -14,18 +20,39 @@
 }
 
 .nav-connect {
-    padding: 10px 20px;
+    padding: 12px 28px;
     border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 120.0%);
-    font-size: 18px;
+    background: linear-gradient(135deg, #3435db, #9747ff);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
     cursor: pointer;
-    transition: 0.5s;
-}
-
-.nav-connect:hover {
-    transform: scale(1.05);
-}
-
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .nav-connect::before {
+    content: "";
+    position: absolute;
+    top: 0; left: -75%;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.15);
+    transform: skewX(-25deg);
+    transition: left 0.4s ease;
+  }
+  
+  .nav-connect:hover::before {
+    left: 130%;
+  }
+  
+  .nav-connect:hover {
+    box-shadow: 0 6px 20px rgba(52, 53, 219, 0.4);
+  }
+  
 .nav-menu li {
     display: flex;
     flex-direction: column;

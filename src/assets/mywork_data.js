@@ -1,47 +1,37 @@
-import project1_img from '../assets/project_1.svg'
-import project2_img from '../assets/project_2.svg'
-import project3_img from '../assets/project_3.svg'
-import project4_img from '../assets/project_4.svg'
-import project5_img from '../assets/project_5.svg'
-import project6_img from '../assets/project_6.svg'
+import project1_img from '../assets/project1_img.png';
+import project2_img from '../assets/project_2.png';
+import hindusthanedu from '../assets/hindusthanedu.png'
+import visitor from '../assets/visitor.png'
+
 
 const mywork_data = [{
         w_no: 1,
-        w_name: "Web design",
+        w_name: "College Cultural Fest Site",
         w_img: project1_img,
-        w_des: "Honest Review"
+        w_des: "Developed the official website for Hilaricas 2025 ",
+        w_link: "https://www.hilaricas.com/"
     },
     {
         w_no: 2,
-        w_name: "Web design",
-        w_img: project2_img,
-        w_des: "s Review"
+        w_name: "HindsuathanEdu",
+        w_img: hindusthanedu,
+        w_des: "College Student Project Site",
+        w_link: "https://hindusthanedu.com"
     },
     {
         w_no: 3,
-        w_name: "Web design",
-        w_img: project3_img,
-        w_des: "Honest e"
+        w_name: "visitor Management",
+        w_img: visitor,
+        w_des: "College Visitor Management",
+        w_link: "https://visitor.hindusthanedu.com"
     },
     {
         w_no: 4,
-        w_name: "Web design",
-        w_img: project4_img,
-        w_des: "Ho eview"
-
-    },
-    {
-        w_no: 5,
-        w_name: "Web design",
-        w_img: project5_img,
-        w_des: "Ho"
-    },
-    {
-        w_no: 6,
-        w_name: "Web design",
-        w_img: project6_img,
-        w_des: "est Review"
-    },
+        w_name: "rajeshwaripackers",
+        w_img: project2_img,
+        w_des: "Company Website",
+        w_link: "https://rajeshwaripackers.in/"
+    }
 ]
 
 export default mywork_data;

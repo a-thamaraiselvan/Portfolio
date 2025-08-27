@@ -1,21 +1,23 @@
-import './Contact.css'
-import theme_pattern from '../../assets/theme_pattern.svg'
-import mail_icon from '../../assets/mail_icon.svg'
-import location_icon from '../../assets/location_icon.svg'
-import call from '../../assets/call_icon.svg'
+import { useState } from 'react';
+import './Contact.css';
+import MaskedContact from './MaskedContact'; // Adjust path as needed
+
+import theme_pattern from '../../assets/theme_pattern.svg';
+import mail_icon from '../../assets/mail_icon.svg';
+import location_icon from '../../assets/location_icon.svg';
+import call from '../../assets/call_icon.svg';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Contact = () => {
-
-    const notify = () => toast.success("Succesfull send!");
-
+    const [isSubmitting, setIsSubmitting] = useState(false);  // Track submission state
 
     const onSubmit = async (event) => {
         event.preventDefault();
-        const formData = new FormData(event.target);
+        setIsSubmitting(true);  // Disable the button on submit
 
+        const formData = new FormData(event.target);
         formData.append("access_key", "53813826-29d0-4085-ae80-0b4b53971fbe");
 
         const object = Object.fromEntries(formData);
@@ -30,69 +32,66 @@ const Contact = () => {
             body: json
         }).then((res) => res.json());
 
+        setIsSubmitting(false);  // Re-enable the button after the request finishes
+
         if (res.success) {
-            console.log(res.message);
+            toast.success("Message sent successfully!");
+            event.target.reset();
+        } else {
+            toast.error("Failed to send message. Please try again.");
         }
     };
+
     return (
         <>
-           <ToastContainer
-                            position="top-right"
-                            autoClose={5000}
-                            hideProgressBar={false}
-                            newestOnTop={false}
-                            closeOnClick
-                            rtl={false}
-                            pauseOnFocusLoss
-                            draggable
-                            pauseOnHover
-                            theme="colored"
-                            transition:Bounce
-                            
-                         
-                            
-            />
+            <ToastContainer position="top-right" autoClose={4000} theme="colored" />
 
-            <div className="contact" id='contact'>
+            <section className="contact" id="contact">
                 <div className="contact-title">
-                    <h1>Get in touch</h1>
-                    <img src={theme_pattern} alt="" />
+                    <h1>Get in Touch</h1>
+                    <img src={theme_pattern} alt="pattern" />
                 </div>
+
                 <div className="contact-section">
                     <div className="contact-left">
-                        <h1>Let s talk</h1>
-                        <p>I am currently avaliable to take on new projects, so feel free to send me a message about anything that you want me to work on. You can contact anytime.</p>
+                        <h2>Let's Talk</h2>
+                        <p>I’m available for freelance work or full-time roles. Let’s collaborate on something amazing together!</p>
                         <div className="contact-details">
                             <div className="contact-detail">
-                                <img src={mail_icon} alt="" />
-                                <p>athamaraiselvan694@gmail.com</p>
+                                <img src={mail_icon} alt="email" />
+                                <a href="mailto:athamaraiselvan694@gmail.com">
+                                    <p>athamaraiselvan694@gmail.com</p>
+                                </a>
                             </div>
+                            <MaskedContact />
                             <div className="contact-detail">
-                                <img src={call} alt="" />
-                                <p>+91 93611 97246</p>
-                            </div>
-                            <div className="contact-detail">
-                                <img src={location_icon} alt="" />
-                                <p>TN,India</p>
+                                <img src={location_icon} alt="location" />
+                                <p>TN, India</p>
                             </div>
                         </div>
                     </div>
-                    <form action="" className='contact-right' onSubmit={onSubmit}>
+
+                    <form className="contact-right" onSubmit={onSubmit}>
                         <label htmlFor="name">Your Name</label>
-                        <input type="text" placeholder='Enter your name' name='name' id='name'required />
+                        <input type="text" name="name" id="name" placeholder="Enter your name" required />
+
                         <label htmlFor="email">Your Email</label>
-                        <input type="email" name="email" id="email" placeholder='Enter your E-mail' required/>
-                        <label htmlFor="number">Enter your Mobile No</label>
-                        <input type="cell" name="number" id="number" placeholder='Enter your Mobile No' required/>
-                        <label htmlFor="message">Write your message here</label>
-                        <textarea name="message" id="message" rows={8}
-                            placeholder='Enter your message here' required></textarea>
-                        <button className='contact-submit' type='submit' onClick={notify}>Submit now</button>
+                        <input type="email" name="email" id="email" placeholder="Enter your email" required />
+
+                        <label htmlFor="number">Your Mobile No</label>
+                        <input type="tel" name="number" id="number" placeholder="Enter your mobile number" required />
+
+                        <label htmlFor="message">Your Message</label>
+                        <textarea name="message" id="message" rows="6" placeholder="Write your message here..." required></textarea>
+
+                        <button className="contact-submit" type="submit" disabled={isSubmitting}>
+                            {isSubmitting ? "Sending..." : "Submit Now"}
+                        </button>
                     </form>
                 </div>
-            </div>
+            </section>
         </>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;

@@ -1,59 +1,47 @@
 import underline from '../../assets/theme_pattern.svg'
 import './Certificate.css'
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import certificate_data from '../../assets/certificate';
 
 const Certificate = () => {
 
-    var settings = {
-        dots: true,
-        infinite: true,
-        speed: 500,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        // initialSlide: 2,
-        responsive: [{
-            breakpoint: 678,
-            settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                dots: true,
-                infinite: true,
-            }
-        }]
-    };
     return (
         <>
 
 
-            <div className="certificate">
+             <div className="certificate" id='certificate'>
                 <div className="certificate-title">
-                    <h1>Certificate</h1>
+                    <h1>certificate</h1>
                     <img src={underline} alt="" />
                 </div>
                 <div className="certificate-container">
-                    <Slider {...settings}>
-                        {
-                            certificate_data.map((certificate, index) => {
-
-                                return <div className='certificate-img' key={index}>
-                                    <img src={certificate.c_img} alt="" />
-                                    <div className="certificate-details">
-                                        <h1>{certificate.c_name}</h1>
-                                        <p>{certificate.c_des}</p>
+                    {
+                        certificate_data.map((certificate, index) => {
+                            return (
+                                <>
+                                    <div className='certificate-details'>
+                                        <img src={certificate.c_img} key={index} />
+                                        <div className='certificate-overlay'>
+                                            <h1>{certificate.c_name}</h1>
+                                            <p>{certificate.c_des}</p>
+                                            {/* <button>Live <i className="fa-solid fa-arrow-up-right-from-square"></i>
+                                            </button> */}
+                                         
+                                        </div>
                                     </div>
-                                </div>
 
-                            })
+                                </>
 
-                        }
-
-                    </Slider>
+                            )
+                        })
+                    }
                 </div>
+                {/* <div className="certificate-showmore">
+                    <p>Show More</p>
+                    <img src={arrow_icon} alt="" />
+                </div> */}
             </div>
-
         </>
     )
 }

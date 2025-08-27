@@ -1,17 +1,18 @@
 .contact {
-    animation: appar linear;
+    animation: contact linear;
     animation-timeline: view();
     animation-range: entry 0% cover 30%;
+    -webkit-animation: contact linear;
 }
 
-@keyframes appar {
+@keyframes contact {
     from {
-        opacity: 0;
-        transform: translateX(-100px);
+        opacity: 0.5;
+        /* transform: translateX(-100px); */
     }
     to {
         opacity: 1;
-        transform: translateX(0px);
+        /* transform: translateX(0px); */
     }
 }
 
@@ -125,11 +126,49 @@
     margin-bottom: 20px;
     cursor: pointer;
     transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
 }
 
 .contact-submit:hover {
-    transform: scale(1.1);
-    transition: 0.3s;
+    background: linear-gradient(267deg, #B923E1 0.36%, #DA7C25 120.0%);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-submit:active {
+    animation: buttonPress 0.15s ease-out forwards;
+}
+
+@keyframes buttonPress {
+    0% {
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    50% {
+        transform: translateY(4px);
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: translateY(0);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.contact-submit.sending {
+    pointer-events: none;
+    background: #333;
+    color: #ddd;
+    font-size: 18px;
+    padding: 12px 28px;
+    transition: none;
+}
+
+.contact-submit.sending:after {
+    content: "Sending...";
+    font-size: 16px;
+    font-weight: 600;
 }
 
 .footer-email-input:hover {
@@ -138,11 +177,10 @@
 }
 
 .footer-subscribe:hover {
-    transform: scale(1.1);
     transition: 0.3s;
 }
 
-@media (max-width:768px) {
+@media (max-width: 768px) {
     .contact {
         gap: 25px;
         margin: 25px 35px;
