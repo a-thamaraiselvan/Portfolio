@@ -83,7 +83,7 @@ const Footer = () => {
         <div className="footer-logo">
           <h1>Thamarai</h1>
         </div>
-        <p>I am a Java Full Stack Developer.</p>
+        <p>I am a Junior Software Developer.</p>
       </div>
 
       <hr />
@@ -92,8 +92,8 @@ const Footer = () => {
         <p className="footer-bottom-left">© 2025 Thamaraiselvan. All rights reserved.</p>
         <div className="footer-bottom-right">
           {/* Display the animated visitor count with "+" if it exceeds 100 */}
-          <p>👀 Visitor Count: <b>{displayCount !== null ? `${displayCount}${displayCount > 100 ? "+" : ""}` : "Loading..."}</b></p>
-          <p>Last Update : <span>27/08/25</span></p>
+          {/* <p>👀 Visitor Count: <b>{displayCount !== null ? `${displayCount}${displayCount > 100 ? "+" : ""}` : "Loading..."}</b></p> */}
+          {/* <p>Last Update : <span>27/08/25</span></p> */}
         </div>
       </div>
     </div>

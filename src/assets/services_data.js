@@ -3,7 +3,7 @@ const Services_Data = [{
         s_role:"Internship",
         s_name: "Java Full Stack Developer",
         s_desc: "ProfitStory.ai",
-        s_date: "Jan - 2025 To Current"
+        s_date: "Jan - 2025 To Oct - 2025"
     },
 ]
 
